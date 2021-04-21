@@ -3,6 +3,7 @@ let passInput = document.getElementById("password");
 let loginBtn = document.getElementById("loginBtn");
 
 function authenticate(){
+    event.preventDefault();
     let mobileNumber = mobileInput.value;
     let password = passInput.value;
     if(checkMobileNumber(mobileNumber) && checkPassword(password)){
@@ -11,7 +12,6 @@ function authenticate(){
     }else{
         alert("Login Failed, Try Again!");
     }
-    return false;
 };
 
 function checkMobileNumber(mobileNumber){

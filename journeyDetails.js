@@ -6,10 +6,11 @@ let timeField = document.getElementById("journeyTime");
 let kmsField = document.getElementById("kmsField");
 let seniorField = document.getElementById("seniorField");
 let gstField = document.getElementById("gstPrice");
+let peakHourField = document.getElementById("peakHour");
 let priceField = document.getElementById("priceField");
 
 let pickUpPlace, dropPlace, kmsValue, seniorCitizen, finalPrice,
-    cabType, journeyDate, journeyTime, gstPercentage;
+    cabType, journeyDate, journeyTime, gstPrice, peakHour;
 
 getJourneyDetails();
 setData();
@@ -23,7 +24,10 @@ function getJourneyDetails(){
     cabType = localStorage.getItem("cabType");
     journeyDate = localStorage.getItem("journeyDate");
     journeyTime = localStorage.getItem("journeyTime");
-    gstPercentage = localStorage.getItem("gstPercentage");
+    gstPrice = localStorage.getItem("gstPrice");
+    peakHour = localStorage.getItem("peakHour");
+    console.log(peakHour);
+    gstPrice = parseInt(gstPrice);
 }
 
 function setData(){
@@ -34,6 +38,11 @@ function setData(){
     timeField.innerText = journeyTime;
     kmsField.innerText = kmsValue;
     seniorField.innerText = seniorCitizen;
-    gstField.innerText = gstPercentage;
+    gstField.innerText = gstPrice;
+    if(peakHour == "Yes"){
+        peakHourField.innerText = "Yes (Extra 1.25% charges apply.)";
+    }else{
+        peakHourField.innerText = peakHour;
+    }
     priceField.innerText = finalPrice;
 }
