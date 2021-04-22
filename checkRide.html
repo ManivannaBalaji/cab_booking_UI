@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bill Estimator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <style>
+        #main-content{
+            width: 700px;
+            height: 670px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center">
+        <div id="main-content" class="rounded p-3">
+            <h3 class="text-center">Bill Estimator</h3>
+            <p>Enter your ride details</p>
+            <label for="cabType">Cab Type : </label>
+            <select name="cabType" id="cabType">
+                <option value="" disabled>Select atleast one category</option>
+                <option value="Micro">Micro</option>
+                <option value="Macro">Macro</option>
+                <option value="Prime">Prime</option>
+            </select>
+            <br><br>
+            <label for="seniorCitizen">Senior Citizen : </label>
+            <input type="checkbox" name="seniorCitizen" id="seniorCitizen">
+            <br><br>
+            <label for="noOfKms">No of Kms : </label>
+            <input type="text" id="noOfKms" name="noOfKms" placeholder="No of Kms">
+            <br><br>
+            <label for="source">PickUp Location : </label>
+            <input type="text" id="source" placeholder="PickUp Location">
+            <br><br>
+            <label for="destination">Drop location : </label>
+            <input type="text" id="destination" placeholder="Drop Location">
+            <br><br>
+            <label for="journeyDate">journey Date : </label>
+            <input type="date" id="journeyDate">
+            <br><br>
+            <label for="journeyTime">Journey Time : </label>
+            <input type="time" name="journeyTime" id="journeyTime">
+            <br><br>
+            <label for="journeyTime">GST Percentage : </label>
+            <input type="number" name="gst" id="gst" value="7" disabled>
+            <br><br>
+            <button id="calculateBtn" class="btn btn-outline-success">Calculate Fare</button>
+            <button id="continueBtn" class="btn btn-outline-success">Continue</button>
+            <P class="pt-4">Price : <span id="price"></span></P>
+        </div>
+    </div>
+
+    <script src="./assets/js/checkRide.js" type="text/javascript"></script>
+
+</body>
+</html>

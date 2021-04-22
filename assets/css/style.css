@@ -1,0 +1,9 @@
+body{
+    background-color: #2ecc71;
+}
+#continueBtn{
+    visibility: hidden;
+}
+#main-content{
+    background-color: #FFF;
+}
